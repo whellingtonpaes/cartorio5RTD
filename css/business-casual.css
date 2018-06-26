@@ -208,8 +208,8 @@ p {
 }
 
 .list-hours .list-hours-item.today {
-  font-weight: bold;
-  color: #e6a756;
+  font-weight: normal;
+  
 }
 
 @media (min-width: 992px) {
