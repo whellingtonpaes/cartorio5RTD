@@ -87,10 +87,22 @@
                 </li>       
                 </ul>
                 
-                <!-- www.123formbuilder.com script begins here -->
-                <script type="text/javascript" defer src="//www.123formbuilder.com/embed/3883108.js" data-role="form" data-default-width="650px"></script>
-                <!-- www.123formbuilder.com script ends here -->
                 
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <form name="formulario" action="./PHPMailer/enviar_email.php" method="post">
+                <input type=hidden name="destino" value="#">
+                <input type=hidden name="enviado" value="#">
+                <p><b>Nome:</b><br>
+                <input type=text name="nome" size="45" id="nome"><br>
+                <p><b>Email:</b><br>
+                <input type=text name="email" size="45" id="email"><br>
+                <p><b>Assunto:</b><br>
+                <input type=text name="assunto" size="45" id="assunto"><br>
+                <p><b>Mensagem:</b><br>
+                <textarea name="Mensagem" rows="5" cols="45" id="mensagem" wrap="virtual"></textarea><br>
+                <p><input type="submit" value="Enviar Email"></p>
+                </form>
+                </div>
 
             </div>
           </div>
