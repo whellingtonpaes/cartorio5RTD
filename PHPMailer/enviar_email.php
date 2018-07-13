@@ -1,15 +1,15 @@
 <?php
-$name = $_POST['name'];
+$name = $_POST['nome'];
 //pega os dados que foi digitado no ID name.
 
 $email = $_POST['email'];
 //pega os dados que foi digitado no ID email.
 
-$subject = $_POST['subject'];
-//pega os dados que foi digitado no ID sebject.
+$subject = $_POST['assunto'];
+//pega os dados que foi digitado no ID assunto.
 
-$message = $_POST['message'];
-//pega os dados que foi digitado no ID message.
+$message = $_POST['mensagem'];
+//pega os dados que foi digitado no ID mensagem.
 
 $headers = "From: $email\r\n";
 $headers .= "Reply-To: $email\r\n";
