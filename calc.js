@@ -122,7 +122,7 @@ function Calcular() {
 		var tbxQtdDiligencia = document.getElementById('tbxQtdDiligencia').value;
 			if(isNaN(qtdPag) || qtdPag == null || qtdPag == "")
 				alert("campo Qtd. Páginas vázio ou possui caractéres inválidos");
-			else if(isNaN(tbxQtdDiligencia) || qtdVias == null || qtdVias == "")
+			else if(isNaN(tbxQtdDiligencia) || tbxQtdDiligencia == null || tbxQtdDiligencia == "")
 				alert("campo Qtd. Diligência vázio ou possui caractéres inválidos");
 			else if(isNaN(qtdNomes) || qtdNomes == null || qtdNomes == "")
 				alert("campo Qtd. Nomes vázio ou possui caractéres inválidos");
@@ -373,15 +373,15 @@ function calculaNotificacao(qtdPag, qtdNomes, tbxQtdDiligencia) {
 				nomeExcedente = 0;
 
 		var outroSubTotal = (distribuicao + nomeExcedente);
-		var fundoEspecialTJ = ((subTotal + outroSubTotal) * 0.2);
-		var fundoProcuradoria = ((outroSubTotal + subTotal) * 0.05 - 0.01);
-		var fundoDefensoria = ((outroSubTotal + subTotal) * 0.05 - 0.01);
-		var fundoFunarpen = ((outroSubTotal + subTotal) * 0.04);
+		var fundoEspecialTJ = parseFloat(((subTotal + outroSubTotal) * 0.2).toFixed(2));
+		var fundoProcuradoria = parseFloat(((outroSubTotal + subTotal) * 0.05 - 0.01).toFixed(2));
+		var fundoDefensoria = parseFloat(((outroSubTotal + subTotal) * 0.05 - 0.01).toFixed(2));
+		var fundoFunarpen = parseFloat(((outroSubTotal + subTotal) * 0.04).toFixed(2));
 		var primeiroISS = ((subTotal + 2.96 + 0.39 + pagPMCMV)/0.95);
 		var segundoISS = (subTotal + 2.96 + 0.39 + pagPMCMV);
 		var ISS = parseFloat((primeiroISS - segundoISS).toFixed(2));
-			if((tbxQtdVias - 2) > 0)
-				nomePMCMV = ((tbxQtdVias - 2) * 0.1);
+			if((qtdNomes - 2) > 0)
+				nomePMCMV = ((qtdNomes - 2) * 0.1);
 			else
 				nomePMCMV = 0;
 
@@ -390,7 +390,7 @@ function calculaNotificacao(qtdPag, qtdNomes, tbxQtdDiligencia) {
 				+ fundoEspecialTJ + outroSubTotal + subTotal + ISS).toFixed(2));
 
 
-		$('#campoValor').text("R$ " + (campoValor == null ? "" : campoValor));
+		$('#campoValor').text("R$ ");
 		$('#campoISS').text("R$ " + ISS);
 		$('#campoTotal').text("R$ " + campoTotal);
 		$('.table').removeClass('hidden');
